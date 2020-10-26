@@ -179,7 +179,7 @@ export default function PostProductSecond(props) {
           </FormControl>
         </Grid>
 
-        <Grid item xs={12}>
+        {/* <Grid item xs={12}>
           <FormControl
             component="fieldset"
             className={classes.formVehicleControl}
@@ -200,7 +200,7 @@ export default function PostProductSecond(props) {
               <FormControlLabel value="car" control={<Radio />} label="Car" />
             </RadioGroup>
           </FormControl>
-        </Grid>
+        </Grid> */}
 
         <Grid item xs={12}>
           <TextField
