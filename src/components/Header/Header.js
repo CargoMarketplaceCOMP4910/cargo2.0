@@ -17,7 +17,7 @@ import Menu from "@material-ui/icons/Menu";
 import styles from "assets/jss/material-kit-react/components/headerStyle.js";
 import '../../App.css'
 
-import logo from 'assets/img/retina-logo-3.png'; // Tell Webpack this JS file uses this image
+import logo from 'assets/img/logo.png'; // Tell Webpack this JS file uses this image
 
 const useStyles = makeStyles(styles);
 
@@ -65,7 +65,7 @@ export default function Header(props) {
   });
   //const brandComponent = <Button className={classes.title}>{brand}</Button>;
   
-  const brandComponent =  <a href="/"> <img src={logo} className={classes.logoImage} /></a>
+  const brandComponent =  <a href="/"> <img src={logo}  className={classes.logoImage} /></a>
 
   return (
     <AppBar className={appBarClasses}>

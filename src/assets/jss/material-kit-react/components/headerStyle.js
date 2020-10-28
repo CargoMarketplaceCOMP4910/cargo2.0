@@ -21,7 +21,8 @@ const headerStyle = {
     marginBottom: "20px",
     color: "#555",
     width: "100%",
-    backgroundColor: "#fff",
+    backgroundColor: "white !important",
+    //backgroundImage: "linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0))",
     boxShadow:
       "0 4px 18px 0px rgba(0, 0, 0, 0.12), 0 7px 10px -5px rgba(0, 0, 0, 0.15)",
     transition: "all 150ms ease 0s",
@@ -105,7 +106,7 @@ const headerStyle = {
       "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(233, 30, 99, 0.46)"
   },
   transparent: {
-    backgroundColor: "transparent !important",
+    backgroundColor: "transparent ",
     boxShadow: "none",
     paddingTop: "25px",
     color: "#FFFFFF"

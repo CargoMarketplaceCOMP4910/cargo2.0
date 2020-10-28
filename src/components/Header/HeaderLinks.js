@@ -85,22 +85,34 @@ function HeaderLinks(props) {
         </Button>
       </ListItem> */}
       <ListItem className={classes.listItem}>
-      <Link to={"/post"} className={classes.link}>
+      <Link to={"/signin"} className={classes.link}>
+
+        <Button
+          color="transparent"
+          target="_blank"
+          fontSize="22px"
+          className={classes.navLink}
+        >
+         Login/Register
+        </Button>
+        </Link>
+      </ListItem>
+      <ListItem className={classes.listItem}>
+      <Link to={""} className={classes.link}>
 
         <Button
           color="transparent"
           target="_blank"
           className={classes.navLink}
         >
-        <AddAPhotoIcon className={classes.icons}/>
-         Sell
+         Profile
         </Button>
         </Link>
       </ListItem>
       <ListItem className={classes.listItem}>
       
         <Link to={{
-              pathname: "/signin",
+              pathname: "/post",
               state: { from: "/", item: {} }
             }} className={classes.link}>
           
@@ -111,7 +123,7 @@ function HeaderLinks(props) {
             target="_blank"
             round
             onClick = {handleLogout}
-          > Logout
+          > Post Ad
           </Button>
 
           ) : (
@@ -119,7 +131,7 @@ function HeaderLinks(props) {
             color="primary"
             target="_blank"
             round
-          > Login
+          >  Post Ad
           </Button>
 
             )}
