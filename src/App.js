@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import { Router, Route, Switch } from "react-router-dom";
 import { Provider, connect } from "react-redux";
 
-
-
 import "assets/scss/material-kit-react.scss?v=1.8.0";
 
 // pages for this product
