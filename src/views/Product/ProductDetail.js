@@ -17,7 +17,7 @@ import firebase from "../../Firebase/firebase";
 // @material-ui/icons
 // core components
 import Header from "components/Header/Header.js";
-import Footer from "components/Footer/Footer.js";
+//import Footer from "components/Footer/Footer.js";
 // import Button from "components/CustomButtons/Button.js";
 import Button from "@material-ui/core/Button";
 
@@ -136,7 +136,7 @@ export default function Components(props) {
             </div>
 
 
-          <Footer />
+         
 
           {isOpen && (
             <div>
@@ -181,7 +181,6 @@ export default function Components(props) {
                   loading={isLoading}
                 />     
               </div>
-            <Footer />
           </div>
     );   
 }
