@@ -112,6 +112,36 @@ function HeaderLinks(props) {
       <ListItem className={classes.listItem}>
       
         <Link to={{
+              pathname: "/signin",
+              state: { from: "/", item: {} }
+            }} className={classes.link}>
+          
+          {isLoggedIn ? (
+
+            <Button
+            color="primary"
+            target="_blank"
+            round
+            onClick = {handleLogout}
+          > Logout
+          </Button>
+
+          ) : (
+            <Button
+            color="primary"
+            target="_blank"
+            round
+          > Login
+          </Button>
+
+            )}
+        </Link>
+      
+      </ListItem>
+
+      <ListItem className={classes.listItem}>
+      
+        <Link to={{
               pathname: "/post",
               state: { from: "/", item: {} }
             }} className={classes.link}>
