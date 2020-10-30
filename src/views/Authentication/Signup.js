@@ -18,9 +18,6 @@ import { connect } from "react-redux";
 import { withStyles } from "@material-ui/styles";
 import Signin from './SignIn'
 
-
-
-
 import firebase from '../../Firebase/firebase.js';
 
 import HeaderLinks from "../../components/Header/HeaderLinks.js";

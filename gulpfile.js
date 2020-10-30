@@ -1,7 +1,7 @@
 const gulp = require("gulp");
 const gap = require("gulp-append-prepend");
 
-gulp.task("licenses", async function() {
+async function license() {
   // this is to add Creative Tim licenses in the production mode for the minified js
   gulp
     .src("build/static/js/*chunk.js", { base: "./" })
@@ -9,13 +9,13 @@ gulp.task("licenses", async function() {
       gap.prependText(`/*!
 
 =========================================================
-* Now UI Kit PRO React - v1.0.0
+* Paper Kit React - v1.2.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/now-ui-kit-pro-react
-* Copyright 2019 Creative Tim (http://www.creative-tim.com)
+* Product Page: https://www.creative-tim.com/product/paper-kit-react
+* Copyright 2020 Creative Tim (http://www.creative-tim.com)
 
-* Coded by Creative Tim
+* Coded by HarshElectronics
 
 =========================================================
 
@@ -32,13 +32,13 @@ gulp.task("licenses", async function() {
       gap.prependText(`<!--
 
 =========================================================
-* Now UI Kit PRO React - v1.0.0
+* Paper Kit React - v1.2.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/now-ui-kit-pro-react
-* Copyright 2019 Creative Tim (http://www.creative-tim.com)
+* Product Page: https://www.creative-tim.com/product/paper-kit-react
+* Copyright 2020 Creative Tim (http://www.creative-tim.com)
 
-* Coded by Creative Tim
+* Coded by HarshElectronics
 
 =========================================================
 
@@ -55,13 +55,13 @@ gulp.task("licenses", async function() {
       gap.prependText(`/*!
 
 =========================================================
-* Now UI Kit PRO React - v1.0.0
+* Paper Kit React - v1.2.0
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/now-ui-kit-pro-react
-* Copyright 2019 Creative Tim (http://www.creative-tim.com)
+* Product Page: https://www.creative-tim.com/product/paper-kit-react
+* Copyright 2020 Creative Tim (http://www.creative-tim.com)
 
-* Coded by Creative Tim
+* Coded by HarshElectronics
 
 =========================================================
 
@@ -71,4 +71,7 @@ gulp.task("licenses", async function() {
     )
     .pipe(gulp.dest("./", { overwrite: true }));
   return;
-});
+}
+
+gulp.task("licenses", license);
+gulp.task("default", license);

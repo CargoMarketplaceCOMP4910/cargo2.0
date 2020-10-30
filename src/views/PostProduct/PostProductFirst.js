@@ -319,12 +319,12 @@ export default function PostProductFirst(props) {
             {/* <FormHelperText>Required</FormHelperText> */}
           </FormControl>
         </Grid>
-
-        <Grid item xs={12}>
+        
+        {/* <Grid item xs={12}>
           <Typography variant="h9" gutterBottom>
             Additional Information (Optional)
           </Typography>
-        </Grid>
+        </Grid> 
 
         <Grid item xs={12} sm={6}>
           <TextField
@@ -367,10 +367,11 @@ export default function PostProductFirst(props) {
                 with noticeable wear
               </MenuItem>
             </Select>
-            {/* <FormHelperText>Required</FormHelperText> */}
+           
           </FormControl>
-        </Grid>
-        <Grid item xs={12}>
+        </Grid>*/}
+
+        {/* <Grid item xs={12}>
           <div>
             <Button
               variant="outlined"
@@ -430,7 +431,7 @@ export default function PostProductFirst(props) {
               </DialogActions>
             </Dialog>
           </div>
-        </Grid>
+        </Grid> */}
       </Grid>
     </React.Fragment>
   );
