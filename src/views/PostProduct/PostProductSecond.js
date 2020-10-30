@@ -15,6 +15,8 @@ import Input from "@material-ui/core/Input";
 import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormLabel from "@material-ui/core/FormLabel";
+import Header from "components/Header/Header.js";
+import HeaderLinks from "components/Header/HeaderLinks.js";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -99,6 +101,36 @@ export default function PostProductSecond(props) {
       {/* <Typography variant="h6" gutterBottom>
         Payment method
       </Typography> */}
+      <Header
+        brand="CarGo"
+        rightLinks={
+        <HeaderLinks />}
+        fixed
+        color="transparent"
+        // centerLinks= {<div> <CustomInput
+        //     white
+        //     inputRootCustomClasses={classes.inputRootCustomClasses}
+        //     formControlProps={{
+        //       className: classes.formControl
+        //     }}
+        //     inputProps={{
+        //       placeholder: "Search",
+        //       inputProps: {
+        //         "aria-label": "Search",
+        //         className: classes.searchInput
+        //       }
+        //     }}
+        //   />
+
+        //   <Button justIcon round color="white">
+        //     <Search className={classes.searchIcon} />
+        //   </Button>
+        //   </div>}
+        changeColorOnScroll={{
+          height: 400,
+          color: "white"
+        }}
+      />
       <Grid container spacing={1}>
         <Grid item xs={12}>
           <TextField
