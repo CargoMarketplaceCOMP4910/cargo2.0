@@ -295,7 +295,7 @@ function PostProduct(props) {
           </Typography>
         </Toolbar>
       </AppBar>
-      <main className={classes.layout}>
+      <main className={classes.layout} style = {{ marginTop: 0 }}>
         <Paper className={classes.paper}>
           <Typography component="h1" variant="h4" align="center">
             Post Ad

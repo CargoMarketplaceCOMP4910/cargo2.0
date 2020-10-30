@@ -119,8 +119,7 @@ function Components(props) {
               <div className={classes.brand}>
                 <h1 className={classes.title}>About</h1>
                 <h3 className={classes.subtitle}>
-                  Because every second matters! Think about it, HOW MUCH IS YOUR TIME WORTH? 
-                  so let us handle it!
+                    This is a one stop shop for all your needs. No more awkward meets with strangers. Shop online and let us do the work.
                 </h3>
               </div>
             </GridItem>

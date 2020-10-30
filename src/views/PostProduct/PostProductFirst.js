@@ -22,6 +22,8 @@ import Input from "@material-ui/core/Input";
 import firebase from './../../Firebase/firebase'
 import Resizer from 'react-image-file-resizer';
 import ImageCompressor from './../../handlers/ImageCompressor'
+import Header from "components/Header/Header.js";
+import HeaderLinks from "components/Header/HeaderLinks.js";
 
 const fileStatuses = [
   "UploadFailed",
@@ -245,6 +247,36 @@ export default function PostProductFirst(props) {
 
   return (
     <React.Fragment>
+      <Header
+        brand="CarGo"
+        rightLinks={
+        <HeaderLinks />}
+        fixed
+        color="transparent"
+        // centerLinks= {<div> <CustomInput
+        //     white
+        //     inputRootCustomClasses={classes.inputRootCustomClasses}
+        //     formControlProps={{
+        //       className: classes.formControl
+        //     }}
+        //     inputProps={{
+        //       placeholder: "Search",
+        //       inputProps: {
+        //         "aria-label": "Search",
+        //         className: classes.searchInput
+        //       }
+        //     }}
+        //   />
+
+        //   <Button justIcon round color="white">
+        //     <Search className={classes.searchIcon} />
+        //   </Button>
+        //   </div>}
+        changeColorOnScroll={{
+          height: 400,
+          color: "white"
+        }}
+      />
       <Grid container spacing={2}>
         <Grid item xs={12} container>
           {/* <Standard /> */}
