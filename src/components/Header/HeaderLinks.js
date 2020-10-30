@@ -73,58 +73,31 @@ function HeaderLinks(props) {
           ]}
         /> */}
       </ListItem>
-      {/* <ListItem className={classes.listItem}>
-        <Button
-          href="http://app.cargomarketplace.ca"
-          color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        >
-          <AndroidOutlinedIcon className={classes.icons} />
-          <AppleIcon className={classes.icons} /> Download App
-        </Button>
-      </ListItem> */}
-      <ListItem className={classes.listItem}>
-      <Link to={""} className={classes.link}>
-
-        <Button
-          color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        >
-         Profile
-        </Button>
-        </Link>
-      </ListItem>
       
       <ListItem className={classes.listItem}>
-      <Link to={{
-              pathname: "/signin",
-              state: { from: "/", item: {} }
-            }} className={classes.link}>
-          
-          {isLoggedIn ? (
 
-            <Button
-            color="transparent"
-            target="_blank"
-            onClick = {handleLogout}
-          > Logout
-          </Button>
+        <Link to={""} className={classes.link}>
 
-          ) : (
-            <Button
+          <Button
             color="transparent"
             target="_blank"
             className={classes.navLink}
-          > Login/Register
+          >
+          Profile
           </Button>
-
-            )}
         </Link>
-      </ListItem>
-      
-      {/* <ListItem className={classes.listItem}>
+
+        <Link to={"/post"} className={classes.link}>
+
+          <Button
+            color="transparent"
+            target="_blank"
+            className={classes.navLink}
+          >
+          <AddAPhotoIcon className={classes.icons}/>
+          Sell
+          </Button>
+          </Link>
       
         <Link to={{
               pathname: "/signin",
@@ -147,36 +120,6 @@ function HeaderLinks(props) {
             target="_blank"
             round
           > Login
-          </Button>
-
-            )}
-        </Link>
-      
-      </ListItem> */}
-
-      <ListItem className={classes.listItem}>
-      
-        <Link to={{
-              pathname: "/post",
-              state: { from: "/", item: {} }
-            }} className={classes.link}>
-          
-          {isLoggedIn ? (
-
-            <Button
-            color="primary"
-            target="_blank"
-            round
-            onClick = {handleLogout}
-          > Post Ad
-          </Button>
-
-          ) : (
-            <Button
-            color="primary"
-            target="_blank"
-            round
-          >  Post Ad
           </Button>
 
             )}
