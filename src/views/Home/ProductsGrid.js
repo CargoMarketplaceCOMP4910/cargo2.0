@@ -42,7 +42,7 @@ export default function ProductsGrid(props){
     useEffect(()=>{
       //creating the listener that will listen to the new changes to the product collection
       console.log('useEffect');
-     const firebaseProductsRef = firebase.firestore().collection('Products').where('Status', '==', "active").orderBy("TimeStamp").limit(40)
+     const firebaseProductsRef = firebase.firestore().collection('Products').where('Status', '==', "active").orderBy("TimeStamp").limit(4)
       // //firebaseProductsRef.endAt(endAt);
      const unsubscribe = firebaseProductsRef.onSnapshot(onCollectionUpdate);
 
@@ -99,10 +99,8 @@ export default function ProductsGrid(props){
           //  console.log("got new product");
           //  setItems(products);
           //  setIsLoading(false);
-           
-           
          });
-         console.log("got new product");
+         console.log(products[1]);
          setItems(products);
          setIsLoading(false);
         //  var newProducts = [];

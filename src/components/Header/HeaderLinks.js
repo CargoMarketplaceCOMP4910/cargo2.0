@@ -85,6 +85,19 @@ function HeaderLinks(props) {
         </Button>
       </ListItem> */}
       <ListItem className={classes.listItem}>
+      <Link to={""} className={classes.link}>
+
+        <Button
+          color="transparent"
+          target="_blank"
+          className={classes.navLink}
+        >
+         Profile
+        </Button>
+        </Link>
+      </ListItem>
+      
+      <ListItem className={classes.listItem}>
       <Link to={{
               pathname: "/signin",
               state: { from: "/", item: {} }
@@ -110,18 +123,37 @@ function HeaderLinks(props) {
             )}
         </Link>
       </ListItem>
-      <ListItem className={classes.listItem}>
-      <Link to={""} className={classes.link}>
+      
+      {/* <ListItem className={classes.listItem}>
+      
+        <Link to={{
+              pathname: "/signin",
+              state: { from: "/", item: {} }
+            }} className={classes.link}>
+          
+          {isLoggedIn ? (
 
-        <Button
-          color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        >
-         Profile
-        </Button>
+            <Button
+            color="primary"
+            target="_blank"
+            round
+            onClick = {handleLogout}
+          > Logout
+          </Button>
+
+          ) : (
+            <Button
+            color="primary"
+            target="_blank"
+            round
+          > Login
+          </Button>
+
+            )}
         </Link>
-      </ListItem>
+      
+      </ListItem> */}
+
       <ListItem className={classes.listItem}>
       
         <Link to={{

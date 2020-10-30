@@ -174,6 +174,8 @@ function PostProduct(props) {
         console.log(error)
       })
     })
+
+    
     
     console.log(userObject.uid)
 
