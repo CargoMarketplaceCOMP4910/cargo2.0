@@ -122,9 +122,12 @@ export default function Components(props) {
                               </div>
                         <p>{item.Description}</p>
 
-                        <Link to={{pathname:'/checkout', state:safeStringify(item)}}>
+                        {/* <Link to={{pathname:'/checkout', state:safeStringify(item)}}>
                           <Button xs={layoutNumber} color="primary" type="button" fullWidth variant="contained" color="primary">Buy</Button>
-                        </Link>
+                        </Link> */}
+
+                        <Button xs={layoutNumber} color="primary" type="button" fullWidth variant="contained" color="primary">Buy</Button>
+
                         {/* <Button xs={layoutNumber} color="primary">Chat</Button> */}
                           <hr></hr>
                         <div><p>Delivery Rate: Delivery available by Shop Caddy.</p>

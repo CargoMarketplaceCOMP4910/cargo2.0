@@ -42,7 +42,7 @@ export default function ProductsGrid(props){
     useEffect(()=>{
       //creating the listener that will listen to the new changes to the product collection
       console.log('useEffect');
-     const firebaseProductsRef = firebase.firestore().collection('Products').where('Status', '==', "active").orderBy("TimeStamp").limit(4)
+     const firebaseProductsRef = firebase.firestore().collection('Products').where('Status', '==', "active").orderBy("TimeStamp").limit(40)
       // //firebaseProductsRef.endAt(endAt);
      const unsubscribe = firebaseProductsRef.onSnapshot(onCollectionUpdate);
 
