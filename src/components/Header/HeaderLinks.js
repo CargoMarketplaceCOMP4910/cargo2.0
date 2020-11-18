@@ -82,6 +82,7 @@ function HeaderLinks(props) {
             color="transparent"
             target="_blank"
             className={classes.navLink}
+            fontWeight="bold"
           >
           Profile
           </Button>
@@ -93,6 +94,8 @@ function HeaderLinks(props) {
             color="transparent"
             target="_blank"
             className={classes.navLink}
+            fontWeight="bold"
+
           >
           <AddAPhotoIcon className={classes.icons}/>
           Sell
@@ -107,7 +110,7 @@ function HeaderLinks(props) {
           {isLoggedIn ? (
 
             <Button
-            color="primary"
+            color="default"
             target="_blank"
             round
             onClick = {handleLogout}
@@ -116,7 +119,7 @@ function HeaderLinks(props) {
 
           ) : (
             <Button
-            color="primary"
+            color="default"
             target="_blank"
             round
           > Login
