@@ -12,7 +12,7 @@ import { ThemeProvider } from '@material-ui/styles';
 // All the following keys are optional, as default values are provided.
 const theme = createMuiTheme({
   palette: {
-    primary: { main: '#FFA105' }, // Purple and green play nicely together.
+    primary: { main: '#5dbcd2' }, // orange nicely together.
     secondary: { main: '#FFA105' }, // This is just green.A700 as hex.
   },
 });
