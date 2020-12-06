@@ -126,13 +126,9 @@ const requestLogin = () => {
   //export const signupNewUser = (name, email, password) => dispatch => {
     
     dispatch(verifyRequest());
-    //evt.preventDefault();
-    //alert(`Submitting Name ${firstName}`)
+
     var user = null;
-    //nullify empty arguments
-    // for (var i = 0; i < arguments.length; i++) {
-    //     arguments[i] = arguments[i] ? arguments[i] : null;
-    // }
+    
     var firstName = name;
     var fireEmail = email;
     var firePassword = password;

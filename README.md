@@ -1,70 +1,92 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Cargo Marketplace
 
-Strat working on it!
+![CarGo_Temp_Logo](./public/--favicon.png)
 
-## Available Scripts
+Native Web app repo for building web application using [react-docs](https://reactjs.org/docs/getting-started.html)
 
-In the project directory, you can run:
+## Installing
 
-### `yarn start`
+- Install Node.JS from the web
+- Fork this repo to your user account 
+- Clone this repo to your local machine 
+`git clone https://gitlab.com/your-username/cargo2.0.git`
+- Move into project directory 
+`cd cargo2.0`
+- Installing dependencies 
+`yarn or npm install`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Starting app in developement mode
+`yarn start or npm start`
+- Open localhost on your web browser
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Other Scripts
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ ### Setting Upstream
+ - Add the Remote Upstream Repository `git remote add upstream [Upstream git URL]`
+ - Fetch the Upstream Branches `git fetch upstream`
+ - Merge Upstream Changes into your Downstream Repository `git merge upstream/master`
+ - Resolve conflicts if you have
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+ ### Developement
+ - Starting  web  `yarn start or npm start`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+ ## Package Managers
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ - [Yarn](https://yarnpkg.com/en/docs/install)
+ - [NPM](https://www.npmjs.com/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ ## File Structure
+It will create a directory called `my-app` inside the current folder.<br>
+Inside that directory, it will generate the initial project structure and install the transitive dependencies:
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+my-app
+├── README.md
+├── node_modules
+├── package.json
+├── .gitignore
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   └── manifest.json
+└── src
+    ├── App.css
+    ├── App.js
+    ├── App.test.js
+    ├── index.css
+    ├── index.js
+    ├── logo.svg
+    └── serviceWorker.js
+    └── setupTests.js
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
 
-## Learn More
+2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
 
-### Code Splitting
+5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
 
-### Analyzing the Bundle Size
+7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-### Making a Progressive Web App
+9.  **`LICENSE`**: This Gatsby starter is licensed under the 0BSD license. This means that you can see this file as a placeholder and replace it with your own license.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
-### Advanced Configuration
+11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+12. **`README.md`**: A text file containing useful reference information about your project.
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+__Note__ : All these requires [node.js](https://nodejs.org/en/) installed on your local machine as we are using [react.js](https://github.com/facebook/react)

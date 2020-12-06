@@ -34,7 +34,7 @@ const fileStatuses = [
   "RemoveFailed",
   "Removing"
 ];
-
+ 
 export default function PostProductFirst(props) {
   const classes = useStyles();
   const [images, setImages] = useState([]);

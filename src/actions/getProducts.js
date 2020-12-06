@@ -6,4 +6,4 @@
 //         console.log(productArray);
 //         dispatch({type: "GET_PRODUCTS", payload: productArray})
 //     }
-// } 
+//   } 
