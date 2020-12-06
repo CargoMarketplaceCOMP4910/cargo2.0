@@ -3,4 +3,4 @@ export function handleCheckout(value) {
       type: 'UPDATE_CHECKOUT',
       payload: value
     });
-  }
+  } 
