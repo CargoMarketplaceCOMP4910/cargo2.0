@@ -29,7 +29,7 @@ function Paypal(props) {
   }
 
   if(paymentSuccessful){
-    return (<Redirect to={{ pathname: "/thankyou",
+    return (<Redirect to={{ pathname: "/",
     state: { orderId:orderId }
   }}/>)  
   }
@@ -59,7 +59,8 @@ function Paypal(props) {
 
       }}
       options={{
-        clientId: "AcBgoLpVx4aD3nSVmQ38hA4anYBQBw5bPMvaUIT5eSTZF4RZwHTllCV_Evgil96nlWhj-rZFCCPNk6mY"
+        clientId: "ATgRQkMH84R0iUB29j4vUFDeVpAWHOcY-h-CuBDV1H-q8vrpz0HV6tCNu6SGJ_Mwrt5d7ZwdpSe47LGw"
+        //clientId: "AcBgoLpVx4aD3nSVmQ38hA4anYBQBw5bPMvaUIT5eSTZF4RZwHTllCV_Evgil96nlWhj-rZFCCPNk6mY"
         ,currency:"CAD"
       }}
     />
