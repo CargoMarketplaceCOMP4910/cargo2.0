@@ -47,6 +47,7 @@ export default function Components(props) {
   } else {
     // No user is signed in.
   }
+  
   const [item, setItem] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isOpen, setisOpen] = useState(false)
@@ -62,13 +63,8 @@ export default function Components(props) {
 
   const handleSignup = () => {
     const { dispatch } = props;
-    //const { firstName, lastName, email, password } = this.state;
-    //dispatch(signupNewUser(firstName, email, password));
-    //setRedirect(true);
 
   };
-
-    //console.log("From Product detail ==>" + JSON.stringify(item.Name));
 
      const urls = item.Pictures; // varaible to store all the pcitures of that product
      //useEffect==>component did mount
