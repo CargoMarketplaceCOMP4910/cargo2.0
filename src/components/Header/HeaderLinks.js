@@ -46,7 +46,7 @@ function HeaderLinks(props) {
   const classes = useStyles();
   const currentUserObject = props.user;
   if( Object.keys(currentUserObject).length > 0 ){
-    console.log('user logged in');
+    console.log('user logged in' + JSON.stringify(currentUserObject));
     isLoggedIn = true;
   } else {
     console.log('user logged out')

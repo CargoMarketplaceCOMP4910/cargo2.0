@@ -119,8 +119,8 @@ function SignUp(props){
     //const { firstName, lastName, email, password } = this.state;
     dispatch(signupNewUser(firstName, email, password));
     setRedirect(true);
-
   };
+  
   //firebase.auth().createUserWithEmailAndPassword("dddddd@gmail.com", "sweetpassword")
 
   if(redirect){
