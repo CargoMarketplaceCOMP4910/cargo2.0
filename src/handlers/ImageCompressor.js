@@ -1,6 +1,6 @@
 import React, { useCallback, useState, Fragment } from "react";
 import Resizer from 'react-image-file-resizer';
-
+ 
 export default function ImageCompressor(width, height, file, props) {
     
     
