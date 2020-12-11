@@ -11,7 +11,7 @@ export default function ImageCompressor(width, height, file, props) {
             if (isValid){
                 var isLandscape = width>height;
                 console.log(isLandscape)
-
+ 
                 if(isLandscape){
                     
                     var ratio = getRatio(width,height);
