@@ -1,4 +1,3 @@
-
 import React, {useState, useEffect} from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -11,7 +10,7 @@ import Grid from '@material-ui/core/Grid';
 import "react-image-lightbox/style.css";
 import Lightbox from "react-image-lightbox"
 import './../../App.css';
-
+import TextField from '@material-ui/core/TextField';
 //importing firebase
 import firebase from "../../Firebase/firebase";
 // @material-ui/icons
@@ -20,41 +19,52 @@ import Header from "components/Header/Header.js";
 //import Footer from "components/Footer/Footer.js";
 // import Button from "components/CustomButtons/Button.js";
 import Button from "@material-ui/core/Button";
-
 // sections for this page
 import HeaderLinks from "components/Header/HeaderLinks.js";
-import styles from "assets/jss/material-kit-react/views/components.js";
 import {BeatLoader} from 'react-spinners';
-
 //custom components from dependecies
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from 'react-responsive-carousel';
-import safeStringify from "safe-json-stringify";
 
-
-const useStyles = makeStyles(styles);
 
 export default function Components(props) {
   const {match:{params}} = props;
   const classes = useStyles();
-  console.log('Product Detail Screen');
+  console.log('Profile Screen');
+
+  
+  var user = firebase.auth().currentUser;
+
+  if (user) {
+    // User is signed in.
+    var displayName = user.displayName;
+    var emailUser = user.email;
+    var photoUrl = user.photoURL;
+    var emailVerified = user.emailVerified;
+    var uid = user.uid;
+
+    console.log(emailUser)
+
+  } else {
+    // No user is signed in.
+  }
+  
   const [item, setItem] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isOpen, setisOpen] = useState(false)
   const [photoIndex, setPhotoIndex] = useState(0);
   const [mobileDevice, setMobileDevice] = useState(window.innerWidth);
+  const [firstName, setFirstName] = useState(displayName);
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [redirect, setRedirect] = useState(false);
   
-  let layoutNumber = 6
-  if(mobileDevice <= 570) {
-    layoutNumber = 12;
-  } else {
-    layoutNumber =6
-  }
-  if(item==null){
-    console.log("Object Empty")
-  }
+  
 
-    //console.log("From Product detail ==>" + JSON.stringify(item.Name));
+  const handleSignup = () => {
+    const { dispatch } = props;
+
+  };
 
      const urls = item.Pictures; // varaible to store all the pcitures of that product
      //useEffect==>component did mount
@@ -65,7 +75,7 @@ export default function Components(props) {
             console.log("The man who: "+ params.productId);
             var productId = params.productId;
         
-          firebase.firestore().collection('Products').doc(productId).get().then((doc)=>{
+          firebase.firestore().collection('Products').doc('6ZhJGTsy1lRtpNFSkWpc').get().then((doc)=>{
             var data = doc.data();
             setItem(data);
             console.log(JSON.stringify(data));
@@ -97,50 +107,77 @@ export default function Components(props) {
             {...rest}
           />
           
-            <div className={classes.container}>
-
-                <Grid container spacing={layoutNumber} className={classNames(classes.productDetailsContainer)}>
-                    <Grid item xs={layoutNumber} >
-                        <Carousel autoPlay >
-                                {
-                                  urls.map((url, k)=>{
-                                    return(
-                                      <div onClick={() => setisOpen(true)}>
-                                        <img src={url} />
-                                      </div>
-                                    );
-                                  })
-                                }
-                          
-                            </Carousel>
-                    </Grid>
-
-                    <Grid item xs={layoutNumber}>
-                              <div className={classes.titleAndPriceContainer}>
-                                <h1>{item.Name}</h1>
-                                <span><h3 className={classes.productDetailsPrice}>CDN$ {item.Price}</h3></span>
-                              </div>
-                        <p>{item.Description}</p>
-
-                        <Link to={{pathname:'/checkout', state:safeStringify(item)}}>
-                          <Button xs={layoutNumber} color="primary" type="button" fullWidth variant="contained" color="primary">Buy</Button>
-                        </Link>
-
-                        {/* <Button xs={layoutNumber} color="primary" type="button" fullWidth variant="contained" color="primary">Buy</Button> */}
-
-                        {/* <Button xs={layoutNumber} color="primary">Chat</Button> */}
-                          <hr></hr>
-                        <div><p>Delivery Rate: Delivery available by Cargo Marketplace.</p>
-                              <p>Additional fees may apply. Delivery charge will be calculated during checkout process</p>
-                              <p>Local pickup available from postal code V3H1G7.</p>
-                        </div>
-                    </Grid>
-                </Grid>
-            </div>
+          <div className={classes.root}>
+      
+    </div>
+      <div className={classes.root}>
+      <Grid container spacing={3}  direction="row">
+        
+        <Grid item xs={2} justify="center" alignItems="center" direction="row">
+            
+        </Grid>
+        <Grid item xs={3} justify="center" alignItems="center" direction="row">
+            <img src={photoUrl}  style={{width:'250px',height:'250px',borderRadius:'50%'}}/>
+        </Grid>  
+        <Grid item xs={7} >
+        <form className={classes.form} noValidate >
 
 
-         
+            <Grid container spacing={2}>
+                      
+              <Grid item xs={12}>
+                <TextField
+                  autoComplete="fname"
+                  name="firstName"
+                  variant="standard"
+                  
+                  fullWidth
+                  id="firstName"
+                  label="Full Name"
+                  autoFocus
+                  defaultValue={displayName}
+                  value={firstName}
+                  onChange={e => setFirstName(e.target.value)}
+                />
+              </Grid>
+              
+              <Grid item xs={12}>
+                <TextField
+                  autoComplete="fname"
+                  name="firstName"
+                  variant="standard"
+                  
+                  fullWidth
+                  id="firstName"
+                  label="Email Address"
+                  autoFocus
+                  defaultValue={emailUser}
+                  value={firstName}
+                  onChange={e => setFirstName(e.target.value)}
+                />
+              </Grid>
 
+            </Grid>
+
+            <Button  className={classes.customHoverFocus}
+              type="Update Information"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.customHoverFocus}
+              onClick={() => handleSignup()}
+              >
+                Update Information
+            </Button>
+
+            {/* <p>{emailUser}</p> */}
+
+        </form>
+        </Grid>
+        
+      </Grid>
+    </div>
+      
           {isOpen && (
             <div>
               <Lightbox
@@ -187,3 +224,56 @@ export default function Components(props) {
           </div>
     );   
 }
+
+const newLocal = "center";
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+    marginTop:"180px"
+  },
+  paper: {
+    padding: theme.spacing(2),
+    margin: 'auto',
+    maxWidth: 500,
+  },
+  image: {
+    width: 128,
+    height: 128,
+  },
+  img: {
+    margin: 'auto',
+    display: 'block',
+    maxWidth: '100%',
+    maxHeight: '100%',
+  },
+
+  container: {
+    flexWrap: "wrap",
+    marginTop:"120px",
+    textAlign:"center",
+    width:"100%"
+  },
+  customHoverFocus: {
+    "&": { backgroundColor: "orange",marginTop:"12px",color:"white" },
+    "&:hover, &.Mui-focusVisible": { backgroundColor: "orange" }
+    
+  },
+
+  paper: {
+    marginTop: theme.spacing(8),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: '60%', // Fix IE 11 issue.
+    marginTop: theme.spacing(3),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+}));

@@ -26,7 +26,18 @@ import {logoutUser} from '../../actions'
 
 import styles from "assets/jss/material-kit-react/components/headerLinksStyle.js";
 
-const useStyles = makeStyles(styles);
+//const useStyles = makeStyles(styles);
+
+const useStyles = makeStyles(theme => ({
+  customHoverFocus: {
+    "&": { backgroundColor: "orange" },
+    "&:hover, &.Mui-focusVisible": { backgroundColor: "orange" }
+  },
+  fontadjust: {
+    "&": { fontWeight: "900" } 
+  }
+}));
+
 
 
 let isLoggedIn= false;
@@ -35,7 +46,7 @@ function HeaderLinks(props) {
   const classes = useStyles();
   const currentUserObject = props.user;
   if( Object.keys(currentUserObject).length > 0 ){
-    console.log('user logged in');
+    console.log('user logged in' + JSON.stringify(currentUserObject));
     isLoggedIn = true;
   } else {
     console.log('user logged out')
@@ -50,33 +61,11 @@ function HeaderLinks(props) {
 
   return (
     <List className={classes.list}>
-      <ListItem className={classes.listItem}>
-        {/* <CustomDropdown
-          noLiPadding
-          buttonText="Filters"
-          buttonProps={{
-            className: classes.navLink,
-            color: "transparent"
-          }}
-          buttonIcon={Apps}
-          dropdownList={[
-            <Link to="/" className={classes.dropdownLink}>
-              All components
-            </Link>,
-            <a
-              href="https://creativetimofficial.github.io/material-kit-react/#/documentation?ref=mkr-navbar"
-              target="_blank"
-              className={classes.dropdownLink}
-            >
-              Documentation
-            </a>
-          ]}
-        /> */}
-      </ListItem>
+      
       
       <ListItem className={classes.listItem}>
 
-        <Link to={""} className={classes.link}>
+        <Link to={"/profile"} className={classes.link}>
 
           <Button
             color="transparent"
@@ -88,7 +77,7 @@ function HeaderLinks(props) {
           </Button>
         </Link>
 
-        <Link to={"/post"} className={classes.link}>
+        <Link to={"/post"} className={classes.link, classes.fontadjust}>
 
           <Button
             color="transparent"
@@ -97,7 +86,7 @@ function HeaderLinks(props) {
             fontWeight="bold"
 
           >
-          <AddAPhotoIcon className={classes.icons}/>
+          <AddAPhotoIcon className={classes.icons, classes.fontadjust}/>
           Sell
           </Button>
           </Link>
@@ -109,8 +98,8 @@ function HeaderLinks(props) {
           
           {isLoggedIn ? (
 
-            <Button
-            color="default"
+            <Button className={classes.customHoverFocus}
+            color="primary"
             target="_blank"
             round
             onClick = {handleLogout}
@@ -118,8 +107,8 @@ function HeaderLinks(props) {
           </Button>
 
           ) : (
-            <Button
-            color="default"
+            <Button className={classes.customHoverFocus}
+            color="primary"
             target="_blank"
             round
           > Login
