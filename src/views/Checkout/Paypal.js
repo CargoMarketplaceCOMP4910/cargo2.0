@@ -1,4 +1,4 @@
-import { PayPalButton } from "react-paypal-button-v2";
+ import { PayPalButton } from "react-paypal-button-v2";
 import React, {useState, useEffect} from 'react';
 import firebase from '../../Firebase/firebase'
 import { connect } from "react-redux";
