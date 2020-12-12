@@ -29,7 +29,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 export default function Components(props) {
   const {match:{params}} = props;
   const classes = useStyles();
-  console.log(setFirstName);
+  console.log(firstName);
 
   
   var user = firebase.auth().currentUser;
@@ -64,10 +64,10 @@ export default function Components(props) {
   const handleSignup = () => {
     var user = firebase.auth().currentUser;
 
-    console.log({setFirstName})
+    console.log(firstName)
     
     user.updateProfile({
-      displayName : "Kapuriya",
+      displayName : firstName,
 
     }).then(function() {
       // Update successful.
@@ -81,7 +81,7 @@ export default function Components(props) {
 
   };
 
-     const urls = item.Pictures; // varaible to store all the pcitures of that product
+     //const urls = item.Pictures; // varaible to store all the pcitures of that product
      //useEffect==>component did mount
      useEffect(()=>{
       //creating the listener that will listen to the new changes to the product collection
@@ -155,7 +155,7 @@ export default function Components(props) {
                 />
               </Grid>
 
-              <Grid item xs={12}>
+              {/* <Grid item xs={12}>
                 <TextField
                   id="standard-read-only-input-fullWidth"
                   label="User ID (Read Only)"
@@ -164,7 +164,7 @@ export default function Components(props) {
                     readOnly: true,
                   }}
                 />
-              </Grid>
+              </Grid> */}
 
               <Grid item xs={12}>
                 <TextField
@@ -200,18 +200,7 @@ export default function Components(props) {
       
           {isOpen && (
             <div>
-              <Lightbox
-                mainSrc={urls[photoIndex]}
-                nextSrc={urls[(photoIndex + 1) % urls.length]}
-                prevSrc={urls[(photoIndex + urls.length - 1) % urls.length]}
-                onCloseRequest={() => setisOpen(false)}
-                onMovePrevRequest={() =>
-                  setPhotoIndex((photoIndex + urls.length - 1) % urls.length)
-                }
-                onMoveNextRequest={() =>
-                  setPhotoIndex((photoIndex + urls.length + 1) % urls.length)
-                }
-              />
+              
               </div>
             )}
 
