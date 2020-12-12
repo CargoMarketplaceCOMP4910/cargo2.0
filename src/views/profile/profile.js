@@ -29,7 +29,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 export default function Components(props) {
   const {match:{params}} = props;
   const classes = useStyles();
-  console.log('Profile Screen');
+  console.log(setFirstName);
 
   
   var user = firebase.auth().currentUser;
@@ -47,7 +47,7 @@ export default function Components(props) {
   } else {
     // No user is signed in.
   }
-  
+
   const [item, setItem] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isOpen, setisOpen] = useState(false)
@@ -62,7 +62,22 @@ export default function Components(props) {
   
 
   const handleSignup = () => {
-    const { dispatch } = props;
+    var user = firebase.auth().currentUser;
+
+    console.log({setFirstName})
+    
+    user.updateProfile({
+      displayName : "Kapuriya",
+
+    }).then(function() {
+      // Update successful.
+      {
+        return <Link to={"/"} className={classes.link} />
+      }
+      
+    }).catch(function(error) {
+      // An error happened.
+    });
 
   };
 
@@ -130,7 +145,6 @@ export default function Components(props) {
                   autoComplete="fname"
                   name="firstName"
                   variant="standard"
-                  
                   fullWidth
                   id="firstName"
                   label="Full Name"
@@ -140,20 +154,26 @@ export default function Components(props) {
                   onChange={e => setFirstName(e.target.value)}
                 />
               </Grid>
-              
+
               <Grid item xs={12}>
                 <TextField
-                  autoComplete="fname"
-                  name="firstName"
-                  variant="standard"
-                  
-                  fullWidth
-                  id="firstName"
-                  label="Email Address"
-                  autoFocus
+                  id="standard-read-only-input-fullWidth"
+                  label="User ID (Read Only)"
+                  defaultValue={uid}
+                  InputProps={{
+                    readOnly: true,
+                  }}
+                />
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  id="standard-fullWidth-read-only-input"
+                  label="Email (Read Only)"
                   defaultValue={emailUser}
-                  value={firstName}
-                  onChange={e => setFirstName(e.target.value)}
+                  InputProps={{
+                    readOnly: true,
+                  }}
                 />
               </Grid>
 
