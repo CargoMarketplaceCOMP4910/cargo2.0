@@ -13,9 +13,6 @@ import safeStringify from "safe-json-stringify";
 
 import imagesStyles from "assets/jss/material-kit-react/imagesStyles.js";
 
-// import { cardTitle } from "assets/jss/material-kit-react.js";
-// import { LazyLoadImage } from 'react-lazy-load-image-component';
-// import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const styles = {
   ...imagesStyles,

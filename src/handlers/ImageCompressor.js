@@ -1,6 +1,6 @@
 import React, { useCallback, useState, Fragment } from "react";
 import Resizer from 'react-image-file-resizer';
-
+ 
 export default function ImageCompressor(width, height, file, props) {
     
     
@@ -11,7 +11,7 @@ export default function ImageCompressor(width, height, file, props) {
             if (isValid){
                 var isLandscape = width>height;
                 console.log(isLandscape)
-
+ 
                 if(isLandscape){
                     
                     var ratio = getRatio(width,height);
